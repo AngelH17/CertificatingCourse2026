@@ -49,7 +49,6 @@ fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
             .padding(30.dp,),
         verticalArrangement = Arrangement.Center
 
-
     ) {
         Box(
             contentAlignment = Alignment.Center,
