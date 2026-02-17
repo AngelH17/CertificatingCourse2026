@@ -72,10 +72,8 @@ fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
         )
     }
 
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = modifier.padding(vertical = 0.dp)
+    Column(horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(0.dp)
     ) {
 
 
