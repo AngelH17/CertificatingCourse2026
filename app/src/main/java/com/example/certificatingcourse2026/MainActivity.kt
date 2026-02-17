@@ -8,9 +8,13 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,6 +27,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.certificatingcourse2026.ui.theme.CertificatingCourse2026Theme
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,51 +48,127 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
-    Column(
+    val number = 2
+    val course = "Android"
+
+    Box(
+        contentAlignment = Alignment.Center,
         modifier = modifier
             .fillMaxSize()
-            .padding(30.dp,),
-        verticalArrangement = Arrangement.Center
-
+            .padding(20.dp)
     ) {
-        Box(
-            contentAlignment = Alignment.Center,
+        Image(
+            painter = painterResource(
+                id = R.drawable.android),
+            contentDescription = null, alpha = 0.3F,
+            modifier = modifier.fillMaxWidth()
+        )
+
+        Text(
+            text = "Luna Gómez Ángel Harim", modifier = modifier.fillMaxWidth(),
+            fontSize = 29.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+        )
+    }
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = modifier.padding(vertical = 0.dp)
+    ) {
+
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceAround,
             modifier = modifier
                 .fillMaxWidth()
-        ) {
 
-
+            ) {
             Image(
                 painter = painterResource(
-                    id = R.drawable.android
+                    id = R.drawable.unam
                 ),
                 contentDescription = null,
-                alpha =0.2F,
-                modifier = modifier
-                    .fillMaxWidth()
-
-            )
+                modifier = modifier.size(50.dp, 50.dp)
+                )
             Text(
-                text = name,
-                fontSize = 10.sp,
-                fontWeight = FontWeight.Bold,
-                modifier = modifier
-                    .fillMaxWidth(),
-                textAlign = TextAlign.Center,
-
-            )
-        }
-        Text(
-            text = "Ha completado dos horas de curso",
-            fontSize = 10.sp,
-            modifier = modifier
-                .fillMaxWidth(),
-            textAlign = TextAlign.Center,
-
-
+                text = "Empresa de Programación",
+                fontSize = 18.sp,
+                )
+            Image(
+                painter = painterResource(
+                    id = R.drawable.fiunam
+                    ),
+                contentDescription = null,
+                modifier = modifier.size(50.dp, 50.dp)
                 )
             }
 
+        Text(
+            text = "This certificate is presented to:",
+            fontSize = 20.sp,
+            textAlign = TextAlign.Center
+            )
+
+
+        Text(
+            text = "Has successfully completed a $number hours course on",
+            fontSize = 14.sp,
+                    modifier = modifier
+                    .fillMaxWidth(),
+                textAlign =TextAlign.Center
+            )
+
+            Text(
+                text = course,
+                fontSize = 30.sp,
+                modifier = modifier
+                    .fillMaxWidth(),
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.SemiBold)
+
+
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceAround,
+                modifier = modifier.fillMaxWidth()
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = modifier
+                ) {
+                    Image(
+                        painter = painterResource(
+                            id = R.drawable.firma1),
+                        contentDescription = null,
+                        modifier = modifier.size(100.dp, 100.dp)
+                    )
+                    Text(text = "Lic. Julian Alvarez",
+                        fontWeight = FontWeight.SemiBold
+                    )
+                    Text(text = "Representatives")
+                }
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = modifier
+                ) {
+                    Image(
+                        painter = painterResource(
+                            id = R.drawable.firma2),
+                        contentDescription = null,
+                        modifier = modifier.size(100.dp, 100.dp)
+                    )
+                    Text(text = "Lic. Messi Ronaldo",
+                        fontWeight = FontWeight.SemiBold)
+                    Text(text = "Representatives")
+                }
+            }
+
+
+    }
 }
 
 
