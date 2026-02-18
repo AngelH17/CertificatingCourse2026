@@ -45,129 +45,128 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @Composable
+
 fun CertificatingCourse(name: String, modifier: Modifier = Modifier) {
     val number = 2
     val course = "Android"
 
     Box(
         contentAlignment = Alignment.Center,
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.android),
+            contentDescription = null,
+            alpha = 0.3f,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Text(
+            text = "Luna Gómez Ángel Harim",
+            fontSize = 29.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
+        )
+    }
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
             .fillMaxSize()
             .padding(20.dp)
     ) {
-        Image(
-            painter = painterResource(
-                id = R.drawable.android),
-            contentDescription = null, alpha = 0.3F,
-            modifier = modifier.fillMaxWidth()
-        )
 
-        Text(
-            text = "Luna Gómez Ángel Harim", modifier = modifier.fillMaxWidth(),
-            fontSize = 29.sp,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center,
-        )
-    }
-
-    Column(horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(0.dp)
-    ) {
-
+        Spacer(modifier = Modifier.height(200.dp))
 
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceAround,
-            modifier = modifier
-                .fillMaxWidth()
-
-            ) {
+            modifier = Modifier.fillMaxWidth()
+        ) {
             Image(
-                painter = painterResource(
-                    id = R.drawable.unam
-                ),
+                painter = painterResource(id = R.drawable.unam),
                 contentDescription = null,
-                modifier = modifier.size(50.dp, 50.dp)
-                )
+                modifier = Modifier.size(50.dp)
+            )
+
             Text(
                 text = "Empresa de Programación",
-                fontSize = 18.sp,
-                )
+                fontSize = 18.sp
+            )
+
             Image(
-                painter = painterResource(
-                    id = R.drawable.fiunam
-                    ),
+                painter = painterResource(id = R.drawable.fiunam),
                 contentDescription = null,
-                modifier = modifier.size(50.dp, 50.dp)
-                )
-            }
+                modifier = Modifier.size(50.dp)
+            )
+        }
+
+        Spacer(modifier = Modifier.height(50.dp))
 
         Text(
             text = "This certificate is presented to:",
             fontSize = 20.sp,
             textAlign = TextAlign.Center
-            )
+        )
 
+        Spacer(modifier = Modifier.height(100.dp))
 
         Text(
             text = "Has successfully completed a $number hours course on",
             fontSize = 14.sp,
-                    modifier = modifier
-                    .fillMaxWidth(),
-                textAlign =TextAlign.Center
-            )
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
 
-            Text(
-                text = course,
-                fontSize = 30.sp,
-                modifier = modifier
-                    .fillMaxWidth(),
-                textAlign = TextAlign.Center,
-                fontWeight = FontWeight.SemiBold)
+        Text(
+            text = course,
+            fontSize = 30.sp,
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
 
 
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceAround,
+            modifier = Modifier.fillMaxWidth()
+        ) {
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceAround,
-                modifier = modifier.fillMaxWidth()
-            ) {
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = modifier
-                ) {
-                    Image(
-                        painter = painterResource(
-                            id = R.drawable.firma1),
-                        contentDescription = null,
-                        modifier = modifier.size(100.dp, 100.dp)
-                    )
-                    Text(text = "Lic. Julian Alvarez",
-                        fontWeight = FontWeight.SemiBold
-                    )
-                    Text(text = "Representatives")
-                }
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    modifier = modifier
-                ) {
-                    Image(
-                        painter = painterResource(
-                            id = R.drawable.firma2),
-                        contentDescription = null,
-                        modifier = modifier.size(100.dp, 100.dp)
-                    )
-                    Text(text = "Lic. Messi Ronaldo",
-                        fontWeight = FontWeight.SemiBold)
-                    Text(text = "Representatives")
-                }
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Image(
+                    painter = painterResource(id = R.drawable.firma1),
+                    contentDescription = null,
+                    modifier = Modifier.size(100.dp)
+                )
+                Text(
+                    text = "Lic. Julian Alvarez",
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(text = "Representatives")
             }
 
-
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Image(
+                    painter = painterResource(id = R.drawable.firma2),
+                    contentDescription = null,
+                    modifier = Modifier.size(100.dp)
+                )
+                Text(
+                    text = "Lic. Messi Ronaldo",
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(text = "Representatives")
+            }
+        }
     }
 }
+
+
+
 
 
 @Preview(showBackground = true)
